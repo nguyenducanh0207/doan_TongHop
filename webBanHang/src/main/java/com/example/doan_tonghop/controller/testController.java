@@ -10,9 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @Controller
-@RequestMapping("DoAn_CNPM")
 public class testController {
-    @GetMapping("home")
+    @GetMapping("/")
     public String Home(Model model)
     {
         user u = new user();
