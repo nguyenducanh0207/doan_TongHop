@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 </head>
 <body>
-
 <div th:insert="../component/header"></div>
 
 <div class="mt-5 pt-5">
@@ -20,7 +19,8 @@
                 <h1 class="text-app"><b>Synthetic Store</b></h1>
                 <br>
                 <p><b>Synthetic Store</b> hệ thống bán lẻ laptop uy tín chất lượng dịch vụ tốt tại Hà Nội. Với các dòng
-                    laptop mới nhất hiện nay của các thương hiệu Apple, Dell, Asus, Microsoft Surface. Tất cả các sản phẩm do <b>Synthetic
+                    laptop mới nhất hiện nay của các thương hiệu Apple, Dell, Asus, Microsoft Surface. Tất cả các sản
+                    phẩm do <b>Synthetic
                         Store</b>
                     bán ra đều được tuân thủ điều kiện bảo hành của nhà cung cấp, hãng sản xuất. Nếu có vấn đề về chất
                     lượng sản phẩm, <b>Synthetic Store</b> cam kết sẽ đền bù bạn gấp đôi </p>
@@ -30,7 +30,7 @@
                         <div class="shadow bg-white rounded-10 h-100 p-4">
                             <div class="fw-bold fs-5">Bảo hành 1 năm</div>
                             <div class="">Toàn bộ sản phẩm của shop đều đính kèm gói bảo hành 1 năm hoàn toàn free</div>
-           git                 <div class="text-center">
+                            <div class="text-center">
                                 <img src="image/baohanh.png" alt="" class="w-75 text-center">
                             </div>
                         </div>
@@ -40,7 +40,7 @@
                             <div class="fw-bold fs-5">500+</div>
                             <div class="">Sản phẩm từ tất cả các thương hiệu nổi tiếng</div>
                             <div class="text-center">
-                                <img src="image/all%20trademark.png" alt="" class="w-100 text-center mt-5">
+                                <img src="/static/image/all%20trademark.png" alt="" class="w-100 text-center mt-5">
                             </div>
                         </div>
                     </div>
@@ -49,20 +49,20 @@
             <div class="col-md-7 position-relative">
                 <div style="padding-bottom: 80%" class="card-img"></div>
                 <img style="z-index: 100; top: 10%" class="scroll-vertical-up-md w-90 position-absolute"
-                     src="/image/home-header.png">
+                     src="/static/image/home-header.png">
                 <img style="top: 40%; right: -10%" class="scroll-vertical-up-sm w-75 position-absolute"
-                     src="/doAn-fe/image/keyboard.png">
+                     src="/static/image/keyboard.png">
                 <img style="right: 64%; top: 70%" class="scroll-vertical-up-lg w-25 position-absolute"
-                     src="/doAn-fe/image/headphone.png">
+                     src="/static/image/headphone.png">
             </div>
         </div>
     </div>
     <div class="container">
         <img class="scroll-vertical-up-lg d-none d-md-block w-10"
-             src="image/ball.png"
+             src="/static/image/ball.png"
              style="margin: 300px 0px 100px; position: absolute; z-index: 100; right: 0; transform: translate3d(0px, 9.6px, 0px);">
         <img class="scroll-vertical-up-lg d-none d-md-block w-10"
-             src="image/icon%20macbook.png"
+             src="/static/image/icon%20macbook.png"
              style="margin: 1000px 0px 100px; position: absolute; z-index: 100; left: 0; transform: translate3d(0px, 16px, 0px);">
     </div>
     <div class="container">
@@ -76,185 +76,12 @@
                     <i class="fa-solid fa-arrow-right"></i>
                 </a>
             </div>
-            <div class="col-md-3 col-sm-4 my-4">
-                <a href="/product/1">
-                    <div class="product">
-                        <div class="background" style="background: linear-gradient(to right, #ffffff, #b58f8f)"></div>
-                        <img class="image zoom"
-                             src="https://static.wixstatic.com/media/2cd43b_8ba844fdf6e048f6ad77f6a3c71fe22d~mv2.png/v1/fill/w_320,h_245,q_90/2cd43b_8ba844fdf6e048f6ad77f6a3c71fe22d~mv2.png"
-                             alt="">
-                        <div class="fs-5 fw-bold">Acer Aspire E5-511</div>
-                        <button class="btn btn-sm btn-light rounded-pill d-flex align-items-center my-3">
-                            Acer
-                            <img class="logo ms-2" src="https://acer.bankbuddy.me/webchat/images/acer_logo.png" alt="">
-                        </button>
-                        <p class="text-gray limit-3-line my-4" data-bs-toggle="tooltip"
-                           title="Tuy là một chiếc máy tính xách tay giá rẻ nhưng Acer E5 511 là chiếc laptop có thiết kế bền vững, màn hình 15,6 inch rộng lớn cho bạn không gian thoải mái ...">
-                            Tuy là một chiếc máy tính xách tay giá rẻ nhưng Acer E5 511 là chiếc laptop có thiết kế bền
-                            vững, màn hình 15,6 inch rộng lớn cho bạn không gian thoải mái ...</p>
-                        <div class="my-2">
-                            <del>
-                                8.400.000 <span>đ</span>
-                            </del>
-                            <span class="badge bg-danger fw-normal ms-2">Giảm 20%</span>
-                        </div>
-                        <button type="button" class="btn btn-price w-100 text-white mt-2">
-                            <i class="fa-solid fa-cart-shopping me-2"></i>
-                            <span>7.200.000 đ</span>
-                        </button>
+            <div class="row">
+                <th:block th:each="i: ${#numbers.sequence(1, 5)}">
+                    <div class="col-xl-4 col-sm-6">
+                        <div th:insert="../component/card-product"></div>
                     </div>
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-4 my-4">
-                <a href="/product/1">
-                    <div class="product">
-                        <div class="background" style="background: linear-gradient(to right, #000000, #b58f8f)"></div>
-                        <img class="image zoom"
-                             src="image/MacBook%20Pro%202021.png    "
-                             alt="">
-                        <div class="fs-5 fw-bold">MacBook Pro 2021</div>
-                        <button class="btn btn-sm btn-light rounded-pill d-flex align-items-center my-3">
-                            Apple
-                            <img class="logo ms-2"
-                                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Apple-logo.png/640px-Apple-logo.png"
-                                 alt="">
-                        </button>
-                        <p class="text-gray limit-3-line my-4" data-bs-toggle="tooltip"
-                           title="MacBook Pro 2021 16 inch – MK1A3 – Grey – Apple M1 MAX 32GB RAM 1TB SSD – NEW">
-                            MacBook Pro 2021 16 inch – MK1A3 – Grey – Apple M1 MAX 32GB RAM 1TB SSD – NEW
-                        </p>
-                        <div class="my-2">
-                            <del>
-                                90.990.000 <span>đ</span>
-                            </del>
-                            <span class="badge bg-danger fw-normal ms-2">Giảm 5%</span>
-                        </div>
-                        <button type="button" class="btn btn-price w-100 text-white mt-2">
-                            <i class="fa-solid fa-cart-shopping me-2"></i>
-                            <span>85.099.991 đ</span>
-                        </button>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-4 my-4">
-                <a href="/product/1">
-                    <div class="product">
-                        <div class="background" style="background: linear-gradient(to right, #ffffff, #b58f8f)"></div>
-                        <img class="image zoom"
-                             src="https://static.wixstatic.com/media/2cd43b_8ba844fdf6e048f6ad77f6a3c71fe22d~mv2.png/v1/fill/w_320,h_245,q_90/2cd43b_8ba844fdf6e048f6ad77f6a3c71fe22d~mv2.png"
-                             alt="">
-                        <div class="fs-5 fw-bold">Acer Aspire E5-511</div>
-                        <button class="btn btn-sm btn-light rounded-pill d-flex align-items-center my-3">
-                            Acer
-                            <img class="logo ms-2" src="https://acer.bankbuddy.me/webchat/images/acer_logo.png" alt="">
-                        </button>
-                        <p class="text-gray limit-3-line my-4" data-bs-toggle="tooltip"
-                           title="Tuy là một chiếc máy tính xách tay giá rẻ nhưng Acer E5 511 là chiếc laptop có thiết kế bền vững, màn hình 15,6 inch rộng lớn cho bạn không gian thoải mái ...">
-                            Tuy là một chiếc máy tính xách tay giá rẻ nhưng Acer E5 511 là chiếc laptop có thiết kế bền
-                            vững, màn hình 15,6 inch rộng lớn cho bạn không gian thoải mái ...</p>
-                        <div class="my-2">
-                            <del>
-                                8.400.000 <span>đ</span>
-                            </del>
-                            <span class="badge bg-danger fw-normal ms-2">Giảm 20%</span>
-                        </div>
-                        <button type="button" class="btn btn-price w-100 text-white mt-2">
-                            <i class="fa-solid fa-cart-shopping me-2"></i>
-                            <span>7.200.000 đ</span>
-                        </button>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-4 my-4">
-                <a href="/product/1">
-                    <div class="product">
-                        <div class="background" style="background: linear-gradient(to right, #000000, #b58f8f)"></div>
-                        <img class="image zoom"
-                             src="image/MacBook%20Pro%202021.png    "
-                             alt="">
-                        <div class="fs-5 fw-bold">MacBook Pro 2021</div>
-                        <button class="btn btn-sm btn-light rounded-pill d-flex align-items-center my-3">
-                            Apple
-                            <img class="logo ms-2"
-                                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Apple-logo.png/640px-Apple-logo.png"
-                                 alt="">
-                        </button>
-                        <p class="text-gray limit-3-line my-4" data-bs-toggle="tooltip"
-                           title="MacBook Pro 2021 16 inch – MK1A3 – Grey – Apple M1 MAX 32GB RAM 1TB SSD – NEW">
-                            MacBook Pro 2021 16 inch – MK1A3 – Grey – Apple M1 MAX 32GB RAM 1TB SSD – NEW
-                        </p>
-                        <div class="my-2">
-                            <del>
-                                90.990.000 <span>đ</span>
-                            </del>
-                            <span class="badge bg-danger fw-normal ms-2">Giảm 5%</span>
-                        </div>
-                        <button type="button" class="btn btn-price w-100 text-white mt-2">
-                            <i class="fa-solid fa-cart-shopping me-2"></i>
-                            <span>85.099.991 đ</span>
-                        </button>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-4 my-4">
-                <a href="/product/1">
-                    <div class="product">
-                        <div class="background" style="background: linear-gradient(to right, #ffffff, #b58f8f)"></div>
-                        <img class="image zoom"
-                             src="https://static.wixstatic.com/media/2cd43b_8ba844fdf6e048f6ad77f6a3c71fe22d~mv2.png/v1/fill/w_320,h_245,q_90/2cd43b_8ba844fdf6e048f6ad77f6a3c71fe22d~mv2.png"
-                             alt="">
-                        <div class="fs-5 fw-bold">Acer Aspire E5-511</div>
-                        <button class="btn btn-sm btn-light rounded-pill d-flex align-items-center my-3">
-                            Acer
-                            <img class="logo ms-2" src="https://acer.bankbuddy.me/webchat/images/acer_logo.png" alt="">
-                        </button>
-                        <p class="text-gray limit-3-line my-4" data-bs-toggle="tooltip"
-                           title="Tuy là một chiếc máy tính xách tay giá rẻ nhưng Acer E5 511 là chiếc laptop có thiết kế bền vững, màn hình 15,6 inch rộng lớn cho bạn không gian thoải mái ...">
-                            Tuy là một chiếc máy tính xách tay giá rẻ nhưng Acer E5 511 là chiếc laptop có thiết kế bền
-                            vững, màn hình 15,6 inch rộng lớn cho bạn không gian thoải mái ...</p>
-                        <div class="my-2">
-                            <del>
-                                8.400.000 <span>đ</span>
-                            </del>
-                            <span class="badge bg-danger fw-normal ms-2">Giảm 20%</span>
-                        </div>
-                        <button type="button" class="btn btn-price w-100 text-white mt-2">
-                            <i class="fa-solid fa-cart-shopping me-2"></i>
-                            <span>7.200.000 đ</span>
-                        </button>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-3 col-sm-4 my-4">
-                <a href="/product/1">
-                    <div class="product">
-                        <div class="background" style="background: linear-gradient(to right, #000000, #b58f8f)"></div>
-                        <img class="image zoom"
-                             src="image/MacBook%20Pro%202021.png    "
-                             alt="">
-                        <div class="fs-5 fw-bold">MacBook Pro 2021</div>
-                        <button class="btn btn-sm btn-light rounded-pill d-flex align-items-center my-3">
-                            Apple
-                            <img class="logo ms-2"
-                                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Apple-logo.png/640px-Apple-logo.png"
-                                 alt="">
-                        </button>
-                        <p class="text-gray limit-3-line my-4" data-bs-toggle="tooltip"
-                           title="MacBook Pro 2021 16 inch – MK1A3 – Grey – Apple M1 MAX 32GB RAM 1TB SSD – NEW">
-                            MacBook Pro 2021 16 inch – MK1A3 – Grey – Apple M1 MAX 32GB RAM 1TB SSD – NEW
-                        </p>
-                        <div class="my-2">
-                            <del>
-                                90.990.000 <span>đ</span>
-                            </del>
-                            <span class="badge bg-danger fw-normal ms-2">Giảm 5%</span>
-                        </div>
-                        <button type="button" class="btn btn-price w-100 text-white mt-2">
-                            <i class="fa-solid fa-cart-shopping me-2"></i>
-                            <span>85.099.991 đ</span>
-                        </button>
-                    </div>
-                </a>
+                </th:block>
             </div>
         </div>
     </div>
@@ -269,122 +96,11 @@
                     <i class="fa-solid fa-arrow-right"></i>
                 </a>
             </div>
-            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 my-4">
-                <div class="d-flex flex-column combo">
-                    <div data-bs-toggle="popover" data-bs-html="true" data-bs-content='<div class="px-4">
-                          <div class="fw-bold fs-5">COMBO 3in1 Macbook Air 2020 - Case, ốp kèm phủ phím</div>
-                          <div class="rounded-10 shadow-sm row my-3 py-3 px-2">
-                              <div class="col-4">
-                                <img class="w-100 rounded-10" src="https://lzd-img-global.slatic.net/g/p/9b058d3b2dfb750ddf0a161761267b21.jpg_720x720q80.jpg_.webp" alt="">
-                              </div>
-                              <div class="col-8">
-                                <div class="fw-bold">
-                                  Macbook Air 2020 màu gradient
-                                </div>
-                                <div class="rounded-pill d-flex align-items-center">
-                                    Apple
-                                    <img class="logo ms-2" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Apple-logo.png/640px-Apple-logo.png" alt="">
-                                </div>
-                                <div class="my-2">
-                                    21.400.000 đ
-                                </div>
-                               </div>
-                         </div>
-                            <div class="rounded-10 shadow-sm row my-3 py-3 px-2">
-                              <div class="col-4">
-                                <img class="w-100 rounded-10" src="https://lzd-img-global.slatic.net/g/p/eebff4f4a1bde9249f6a9e81b0107671.jpg_720x720q80.jpg_.webp" alt="">
-                              </div>
-                              <div class="col-8">
-                                <div class="fw-bold">
-                                  Lót chuột màu gradient
-                                </div>
-                                <div class="rounded-pill d-flex align-items-center">
-                                    Apple
-                                    <img class="logo ms-2" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Apple-logo.png/640px-Apple-logo.png" alt="">
-                                </div>
-                                <div class="my-2">
-                                    400.000 đ
-                                </div>
-                               </div>
-                            </div>
-                             <div class="rounded-10 shadow-sm row my-3 py-3 px-2">
-                              <div class="col-4">
-                                <img class="w-100 rounded-10" src="https://lzd-img-global.slatic.net/g/p/36e809e613d460ace438dea5b1b038d9.jpg_720x720q80.jpg_.webp" alt="">
-                              </div>
-                              <div class="col-8">
-                                <div class="fw-bold">
-                                  Bàn phím màu gradient
-                                </div>
-                                <div class="rounded-pill d-flex align-items-center">
-                                    Apple
-                                    <img class="logo ms-2" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Apple-logo.png/640px-Apple-logo.png" alt="">
-                                </div>
-                                <div class="my-2">
-                                    1.400.000 đ
-                                </div>
-                               </div>
-                            </div>
-                            <div class="btn btn-price w-100">Thêm vào giỏ hàng</div>
-                        </div>'>
-                        <div class="position-relative image-overlap-3 w-100">
-                            <div style="background-color: transparent;padding-bottom: 55%;width: 80%;"
-                                 class="card-bg-image img-product rounded-10 cursor-pointer"></div>
-                            <div class="card-bg-image img-product rounded-10 cursor-pointer"
-                                 style="background-image: url('https://lzd-img-global.slatic.net/g/p/9b058d3b2dfb750ddf0a161761267b21.jpg_720x720q80.jpg_.webp')"></div>
-                            <div class="card-bg-image img-product rounded-10 cursor-pointer centered-axis-y"
-                                 style="background-image: url('https://lzd-img-global.slatic.net/g/p/eebff4f4a1bde9249f6a9e81b0107671.jpg_720x720q80.jpg_.webp')"></div>
-                            <div class="card-bg-image img-product rounded-10 cursor-pointer centered-axis-y"
-                                 style="background-image: url('https://lzd-img-global.slatic.net/g/p/36e809e613d460ace438dea5b1b038d9.jpg_720x720q80.jpg_.webp')"></div>
-                        </div>
-                        <div>
-                            <div data-bs-toggle="tooltip"
-                                 title="COMBO 3in1 - Case, ốp kèm phủ phím dành cho Macbook - Màu Gradient - Tặng kèm nút chống bụi Macbook - Màu ngẫu nhiên - Hàng chính hãng"
-                                 class="card-product-name fw-bold fs-5 limit-2-line lh-sm mb-2">COMBO 3in1 Macbook Air
-                                2020 - Case, ốp
-                                kèm phủ phím
-                            </div>
-                            <div class="d-flex">
-                                <button class="btn btn-sm btn-light rounded-pill d-flex align-items-center my-3">
-                                    Acer
-                                    <img class="logo ms-2" src="https://acer.bankbuddy.me/webchat/images/acer_logo.png"
-                                         alt="">
-                                </button>
-                                <button class="btn btn-sm btn-light rounded-pill d-flex align-items-center my-3">
-                                    Apple
-                                    <img class="logo ms-2"
-                                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Apple-logo.png/640px-Apple-logo.png"
-                                         alt="">
-                                </button>
-                            </div>
-                            <small>
-                                <p data-bs-toggle="tooltip"
-                                   title="COMBO 3in1 Macbook Air 2020 - Case, ốp
-                                    kèm phủ phím dành cho Macbook - Màu Gradient - Tặng kèm nút chống bụi Macbook - Màu ngẫu
-                                    nhiên - Hàng chính hãng"
-                                   class="text-secondary line-height-14 limit-3-line mb-0">COMBO 3in1 Macbook Air 2020 -
-                                    Case, ốp
-                                    kèm phủ phím dành cho Macbook - Màu Gradient - Tặng kèm nút chống bụi Macbook - Màu
-                                    ngẫu
-                                    nhiên - Hàng chính hãng</p>
-                            </small>
-                        </div>
-                    </div>
-                    <div>
-                        <div>
-                            <div class="my-2">
-                                <del>
-                                    35.000.000 <span>đ</span>
-                                </del>
-                                <span class="badge bg-danger fw-normal ms-2">Giảm 2%</span>
-                            </div>
-                            <button type="button" class="btn btn-price w-100 text-white mt-2">
-                                <i class="fa-solid fa-cart-shopping me-2"></i>
-                                3 Sản phẩm · 31.200.000 <span>đ</span>
-                            </button>
-                        </div>
-                    </div>
+            <th:block th:each="i: ${#numbers.sequence(1, 5)}">
+                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 my-4">
+                    <div th:insert="../component/card-combo"></div>
                 </div>
-            </div>
+            </th:block>
         </div>
     </div>
 </div>
@@ -405,6 +121,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-<script src="/js/app.js"></script>
+<script src="/static/js/app.js"></script>
 </body>
 </html>

@@ -12,12 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 @Controller
 public class testController {
     @GetMapping("/")
-    public String Home(Model model)
+    public String Home()
     {
-        user u = new user();
-        u.setName("DucAnh");
-        u.setMssv("6263");
-        model.addAttribute("test",u);
         return "home";
     }
     @GetMapping("products")
