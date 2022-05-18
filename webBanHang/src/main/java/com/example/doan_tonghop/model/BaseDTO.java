@@ -1,27 +1,26 @@
-package com.example.doan_tonghop.entity;
-import javax.persistence.*;
+package com.example.doan_tonghop.model;
+
+
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
-@MappedSuperclass
-public abstract class BaseEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class BaseDTO<T> {
     private Long id;
-
-    @Column(name = "CreatAt")
     private Date creatAt;
-
-    @Column(name = "UpdateAt ")
     private Date updateAt;
-
-    @Column(name = "UpdateBy")
     private Long updateBy;
-
-    @Column(name = "IsDelete")
     private Long isDelete;
-
-    @Column(name = "DeleteBy ")
     private Long deleteBy;
+    private List<T> listResult = new ArrayList<>();
+
+    public List<T> getListResult() {
+        return listResult;
+    }
+
+    public void setListResult(List<T> listResult) {
+        this.listResult = listResult;
+    }
 
     public Long getId() {
         return id;
