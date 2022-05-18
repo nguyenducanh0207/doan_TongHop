@@ -18,7 +18,7 @@ public abstract class BaseEntity {
     private Long updateBy;
 
     @Column(name = "IsDelete")
-    private boolean isDelete;
+    private Long isDelete;
 
     @Column(name = "DeleteBy ")
     private Long deleteBy;
@@ -55,12 +55,12 @@ public abstract class BaseEntity {
         this.updateBy = updateBy;
     }
 
-    public boolean isDelete() {
+    public Long getIsDelete() {
         return isDelete;
     }
 
-    public void setDelete(boolean delete) {
-        isDelete = delete;
+    public void setIsDelete(Long isDelete) {
+        this.isDelete = isDelete;
     }
 
     public Long getDeleteBy() {

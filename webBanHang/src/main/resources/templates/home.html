@@ -18,6 +18,11 @@
             <div class="col-md-5 my-4">
                 <h1 class="text-app"><b>Synthetic Store</b></h1>
                 <br>
+                <th:block th:each="product : ${pList}">
+                    <p th:text="${product.id}"></p>
+                    <p th:text="${product.productName}"></p>
+                    <p th:text="${product.productCount}"></p>
+                </th:block>
                 <p><b>Synthetic Store</b> hệ thống bán lẻ laptop uy tín chất lượng dịch vụ tốt tại Hà Nội. Với các dòng
                     laptop mới nhất hiện nay của các thương hiệu Apple, Dell, Asus, Microsoft Surface. Tất cả các sản
                     phẩm do <b>Synthetic
