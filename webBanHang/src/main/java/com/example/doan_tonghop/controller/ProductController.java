@@ -1,7 +1,7 @@
 package com.example.doan_tonghop.controller;
 
 
-import com.example.doan_tonghop.model.ProductDTO;
+
 import com.example.doan_tonghop.service.impl.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class BaseDTO<T> {
+public abstract class BaseDTO<T> {
     private Long id;
     private Date creatAt;
     private Date updateAt;

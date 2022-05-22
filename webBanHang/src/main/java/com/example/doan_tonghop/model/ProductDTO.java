@@ -1,21 +1,24 @@
 package com.example.doan_tonghop.model;
 
+import java.util.Date;
+
 public class ProductDTO extends BaseDTO<ProductDTO> {
     private String productName;
-    private Long productCount;
     private Long productTypeId;
+    private Long productCount;
     private Long cost;
     private Long creatBy;
 
-    public ProductDTO(String productName, Long productCount, Long productTypeId, Long cost, Long creatBy) {
+    public ProductDTO(String productName, Long productTypeId, Long productCount, Long cost, Long creatBy) {
         this.productName = productName;
-        this.productCount = productCount;
         this.productTypeId = productTypeId;
+        this.productCount = productCount;
         this.cost = cost;
         this.creatBy = creatBy;
     }
-    public ProductDTO()
+    public  ProductDTO()
     {}
+
     public String getProductName() {
         return productName;
     }
@@ -24,20 +27,20 @@ public class ProductDTO extends BaseDTO<ProductDTO> {
         this.productName = productName;
     }
 
-    public Long getProductCount() {
-        return productCount;
-    }
-
-    public void setProductCount(Long productCount) {
-        this.productCount = productCount;
-    }
-
     public Long getProductTypeId() {
         return productTypeId;
     }
 
     public void setProductTypeId(Long productTypeId) {
         this.productTypeId = productTypeId;
+    }
+
+    public Long getProductCount() {
+        return productCount;
+    }
+
+    public void setProductCount(Long productCount) {
+        this.productCount = productCount;
     }
 
     public Long getCost() {
