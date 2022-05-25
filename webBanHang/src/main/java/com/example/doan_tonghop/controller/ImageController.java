@@ -23,11 +23,7 @@ public class ImageController {
     @Autowired
     private ImageService imageService;
     @PostMapping("upload")
-    public ImageDTO uploadImage(@RequestParam("parentID") Long parentID,
-                              @RequestParam("orderBy") Long orderBy,
-                              @RequestParam("file")MultipartFile image,
-                              @RequestParam("statusId") Long statusId,
-                              @RequestParam("imageType") Long imageType) throws IOException {
+    public ImageDTO uploadImage(@RequestParam("file")MultipartFile image) throws IOException {
         Path staticPath = Paths.get("static");
         Path imagePath = Paths.get("image");
         if (!Files.exists(CURRENT_FOLDER.resolve(staticPath).resolve(imagePath))) {
@@ -40,11 +36,6 @@ public class ImageController {
         {
             ImageDTO imageDTO = new ImageDTO();
             imageDTO.setImageUrl(imagePath.resolve(image.getOriginalFilename()).toString());
-            imageDTO.setParentId(parentID);
-            imageDTO.setOrderBy(orderBy);
-            imageDTO.setStatusId(statusId);
-            imageDTO.setImageType(imageType);
-
             return imageService.save(imageDTO);
         }
     }
