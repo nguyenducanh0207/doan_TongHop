@@ -18,11 +18,6 @@
             <div class="col-md-5 my-4">
                 <h1 class="text-app"><b>Synthetic Store</b></h1>
                 <br>
-                <th:block th:each="product : ${productList}">
-                    <p th:text="${product.id}"></p>
-                    <p th:text="${product.productName}"></p>
-                    <p th:text="${product.productCount}"></p>
-                </th:block>
                 <p><b>Synthetic Store</b> hệ thống bán lẻ laptop uy tín chất lượng dịch vụ tốt tại Hà Nội. Với các dòng
                     laptop mới nhất hiện nay của các thương hiệu Apple, Dell, Asus, Microsoft Surface. Tất cả các sản
                     phẩm do <b>Synthetic
@@ -34,7 +29,7 @@
                     <div class="col-lg-6 my-2">
                         <div class="shadow bg-white rounded-10 h-100 p-4">
                             <div class="fw-bold fs-5">Bảo hành 1 năm</div>
-                            <div class="">Toàn bộ sản phẩm của shop đều đính kèm gói bảo hành 1 năm hoàn toàn free</div>
+                            <div class="">Toàn bộ sản prom của shop đều đính kèm gói bảo hành 1 năm hoàn toàn free</div>
                             <div class="text-center">
                                 <img src="image/baohanh.png" alt="" class="w-75 text-center">
                             </div>
@@ -81,10 +76,11 @@
                     <i class="fa-solid fa-arrow-right"></i>
                 </a>
             </div>
+
             <div class="row">
-                <th:block th:each="i: ${#numbers.sequence(1, 5)}">
+                <th:block th:each="product : ${products}">
                     <div class="col-xl-4 col-sm-6">
-                        <div th:insert="../component/card-product"></div>
+                        <div th:include="../component/card-product :: cardProduct (${product})">...</div>
                     </div>
                 </th:block>
             </div>
@@ -118,8 +114,12 @@
         ...
     </div>
 </div>
+<input type="file" id="uploadImage" onchange="upload(this)">
 <script>
-
+    function upload(file){
+        const image = $(file).val();
+        console.log(image)
+    }
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
@@ -127,5 +127,6 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 <script src="/static/js/app.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
 </body>
 </html>
