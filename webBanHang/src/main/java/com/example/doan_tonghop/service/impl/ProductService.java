@@ -44,15 +44,18 @@ public class ProductService implements IProduct {
     }
 
     @Override
-    public void add(ProductDTO productDTO) {
-        ProductEntity productEntity = toEntity(productDTO);
-        productRepository.save(productEntity);
-        productDTO.setId(productEntity.getId());
+    public ProductDTO create(ProductDTO productDTO) {
+        ProductEntity productEntity = new ProductEntity();
+        productEntity = toEntity(productDTO);
+        productEntity = productRepository.save(productEntity);
+        productDTO = toDTO(productEntity);
+        return productDTO;
+
     }
 
     @Override
-    public void update(ProductDTO productDTO) {
-
+    public ProductDTO update(ProductDTO productDTO) {
+        return null;
     }
 
     @Override
