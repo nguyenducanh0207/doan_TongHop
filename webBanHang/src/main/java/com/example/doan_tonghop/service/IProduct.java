@@ -6,8 +6,8 @@ import java.util.List;
 
 public interface IProduct {
     List<ProductDTO> findAll();
-    void add(ProductDTO productDTO);
-    void update(ProductDTO productDTO);
+    ProductDTO create(ProductDTO productDTO);
+    ProductDTO update(ProductDTO productDTO);
     void delete(ProductDTO productDTO);
     ProductDTO getOne(Long id);
 }
