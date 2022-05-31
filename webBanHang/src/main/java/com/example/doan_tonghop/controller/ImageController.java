@@ -24,7 +24,7 @@ public class ImageController {
     private ImageService imageService;
     @Autowired
     private ImageRepository imageRepository;
-    @PostMapping("/")
+    @PostMapping("/home")
     public ImageTableEntity uploadImage(@RequestParam("image")MultipartFile image) throws IOException {
         Path staticPath = Paths.get("static");
         Path imagePath = Paths.get("images");

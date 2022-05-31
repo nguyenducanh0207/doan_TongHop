@@ -26,9 +26,9 @@ public class UploadController {
     @Autowired
     private UploadsRepository uploadsRepository;
 
-    @PostMapping("uploads")
+    @PostMapping("/")
     @ResponseStatus(HttpStatus.CREATED)
-    public SaveImageEntity create(@RequestParam MultipartFile image) throws IOException {
+    public SaveImageEntity create(@RequestParam("image") MultipartFile image) throws IOException {
         Path staticPath = Paths.get("static");
         Path imagePath = Paths.get("image");
         if (!Files.exists(CURRENT_FOLDER.resolve(staticPath).resolve(imagePath))) {
