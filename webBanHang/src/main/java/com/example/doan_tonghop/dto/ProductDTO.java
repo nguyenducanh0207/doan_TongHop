@@ -1,6 +1,4 @@
-package com.example.doan_tonghop.model;
-
-import java.util.Date;
+package com.example.doan_tonghop.dto;
 
 public class ProductDTO extends BaseDTO<ProductDTO> {
     private String productName;

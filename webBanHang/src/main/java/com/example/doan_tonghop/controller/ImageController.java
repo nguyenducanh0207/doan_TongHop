@@ -1,7 +1,6 @@
 package com.example.doan_tonghop.controller;
 
 import com.example.doan_tonghop.entity.ImageTableEntity;
-import com.example.doan_tonghop.model.ImageDTO;
 import com.example.doan_tonghop.repository.ImageRepository;
 import com.example.doan_tonghop.service.impl.ImageService;
 import org.springframework.beans.factory.annotation.Autowired;

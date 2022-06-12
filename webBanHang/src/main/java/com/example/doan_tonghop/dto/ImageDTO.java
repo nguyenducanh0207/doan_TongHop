@@ -1,4 +1,4 @@
-package com.example.doan_tonghop.model;
+package com.example.doan_tonghop.dto;
 
 
 

@@ -1,9 +1,7 @@
 package com.example.doan_tonghop.service.impl;
 
 import com.example.doan_tonghop.entity.ImageTableEntity;
-import com.example.doan_tonghop.entity.ProductEntity;
-import com.example.doan_tonghop.model.ImageDTO;
-import com.example.doan_tonghop.model.ProductDTO;
+import com.example.doan_tonghop.dto.ImageDTO;
 import com.example.doan_tonghop.repository.ImageRepository;
 import com.example.doan_tonghop.service.IImage;
 import org.modelmapper.ModelMapper;

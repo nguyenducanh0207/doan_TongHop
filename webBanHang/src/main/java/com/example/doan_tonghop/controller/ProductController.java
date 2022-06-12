@@ -2,37 +2,33 @@ package com.example.doan_tonghop.controller;
 
 
 
+import com.example.doan_tonghop.dto.ProducTypeDTO;
+import com.example.doan_tonghop.dto.ProductDTO;
 import com.example.doan_tonghop.service.impl.ProductService;
+import com.example.doan_tonghop.service.impl.ProductTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 
-@Controller
+@RestController
 public class ProductController {
     @Autowired
     private ProductService productService;
 
-    @GetMapping("/")
-    public String show(Model model)
-    {
-        model.addAttribute("products",productService.findAll());
-        return "home";
-    }
 
     @GetMapping("/create")
-    public String create()
+    public String viewproduct()
     {
         return "createproduct";
     }
+    @PostMapping("/create")
+    public ProductDTO create(@RequestBody ProductDTO model)
 
-    @PostMapping("create")
-    public String createsubmit()
     {
-        return "createproduct";
+        return productService.add(model);
     }
-
 }

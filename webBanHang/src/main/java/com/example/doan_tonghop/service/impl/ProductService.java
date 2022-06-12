@@ -1,8 +1,11 @@
 package com.example.doan_tonghop.service.impl;
 
+import com.example.doan_tonghop.dto.ProducTypeDTO;
 import com.example.doan_tonghop.entity.ProductEntity;
-import com.example.doan_tonghop.model.ProductDTO;
+import com.example.doan_tonghop.dto.ProductDTO;
+import com.example.doan_tonghop.entity.ProductTypeEntity;
 import com.example.doan_tonghop.repository.ProductRepository;
+import com.example.doan_tonghop.repository.ProductTypeRepository;
 import com.example.doan_tonghop.service.IProduct;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +19,9 @@ public class ProductService implements IProduct {
     private ProductRepository  productRepository;
     @Autowired
     private ModelMapper modelMapper;
+    @Autowired
+    private ProductTypeRepository productTypeRepository;
+
 
     //Convert
     public ProductEntity toEntity (ProductDTO productDTO)
@@ -42,9 +48,20 @@ public class ProductService implements IProduct {
         }
         return results;
     }
+    @Override
+    public List<ProductDTO> findByProductTypeID(Long productTypeId) {
+        List<ProductDTO> results = new ArrayList<>();
+        List<ProductEntity> product = productRepository.findByProductType_Id(productTypeId);
+        for (ProductEntity item : product)
+        {
+            ProductDTO productDTO = toDTO(item);
+            results.add(productDTO);
+        }
+        return results;
+    }
 
     @Override
-    public ProductDTO create(ProductDTO productDTO) {
+    public ProductDTO add(ProductDTO productDTO) {
         ProductEntity productEntity = new ProductEntity();
         productEntity = toEntity(productDTO);
         productEntity = productRepository.save(productEntity);
@@ -52,6 +69,7 @@ public class ProductService implements IProduct {
         return productDTO;
 
     }
+
 
     @Override
     public ProductDTO update(ProductDTO productDTO) {
